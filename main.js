@@ -11,7 +11,10 @@ fs.readFile("./data.json", "utf-8", (err, jsonString) => {
             const data = JSON.parse(jsonString);
             for (let i = 0; i < Object.keys(data).length; i++)
             {
-                array.push(`${data[i].txt}, усього:${data[i].value}`);
+                if(data[i].txt ==="Доходи, усього" || data[i].txt === "Витрати, усього")
+                {
+                    array.push(`${data[i].txt}: ${data[i].value}`);
+                }
             }
             
         }
