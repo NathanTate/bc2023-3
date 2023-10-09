@@ -20,8 +20,8 @@ fs.readFile("./data.json", "utf-8", (err, jsonString) => {
         }
     }
 
-
-fs.writeFile("./output.txt", JSON.stringify(array ,null, 2), (err)=>{
+const finalString = array.join('\n')
+fs.writeFile("./output.txt", finalString, (err)=>{
     if(err)
     {
         console.log(err);
